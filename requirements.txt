@@ -1,0 +1,6 @@
+torch
+transformers
+langchain
+langchain-community
+faiss-cpu
+gradio
