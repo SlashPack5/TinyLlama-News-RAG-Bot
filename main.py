@@ -61,19 +61,6 @@ def process_urls(urls_text):
         return f"❌ Error processing URLs: {e}"
 
 
-def clean_answer(raw_text):
-    """
-    Extracts the actual answer from the LLM output.
-    Looks for lines like 'Helpful Answer:' or 'FINAL ANSWER:'.
-    """
-    for line in raw_text.splitlines():
-        if "Helpful Answer:" in line:
-            return line.split("Helpful Answer:")[1].strip()
-        if "FINAL ANSWER:" in line:
-            return line.split("FINAL ANSWER:")[1].strip()
-    # fallback: return the raw text if no marker found
-    return raw_text.strip()
-
 # -----------------------
 def ask_question(question):
     if retriever is None or llm is None:
